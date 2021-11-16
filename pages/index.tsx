@@ -1,3 +1,4 @@
+import ReactMapGL, { FlyToInterpolator, MapRef } from "react-map-gl";
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -16,6 +17,17 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <ReactMapGL
+          mapStyle={
+               "mapbox://styles/danqing/ckone0do519nb18s89e6l2ggi"
+          }
+          mapboxApiAccessToken={"pk.eyJ1IjoiZGFucWluZyIsImEiOiJmNjJhNWJhZDQ3OTEzZTI1ODU5OTFlNWYzZDAwMzJhYSJ9.PzpMZ8rnzkBBs0oJgUmTZA"}
+          // @ts-ignore: outdated types, see last remark at
+          // https://github.com/visgl/react-map-gl/blob/db08714945b106062a9e8b87722a8c0e343eb3de/docs/advanced/viewport-transition.md#transition-and-the-onviewportchange-callback
+          transitionDuration="auto"
+        />
+
 
         <p className={styles.description}>
           Get started by editing{' '}
